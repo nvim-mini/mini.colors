@@ -1,8 +1,8 @@
-<div align="center"> <img src="https://github.com/nvim-mini/assets/blob/main/logo-2/logo-colors_readme.png" alt="mini.colors"/> </div>
+<p align="center"> <img src="https://github.com/nvim-mini/assets/blob/main/logo-2/logo-colors_readme.png?raw=true" alt="mini.colors" style="max-width:100%;border:solid 2px"/> </p>
 
 ### Tweak and save any color scheme
 
-See more details in [Features](#features) and [help file](doc/mini-colors.txt).
+See more details in [Features](#features) and [Documentation](doc/mini-colors.txt).
 
 ---
 
@@ -21,11 +21,12 @@ If you want to help this project grow but don't know where to start, check out [
 
 ## Demo
 
+<!-- Demo source: https://github.com/nvim-mini/assets/blob/main/demo/demo-colors.mp4 -->
 https://user-images.githubusercontent.com/24854248/232283566-9a51fa55-d20a-4650-8205-763b55e21366.mp4
 
 ## Features
 
-- Create colorscheme object (see `*MiniColors-colorscheme*` tag in help file): either manually (`MiniColors.as_colorscheme()`) or by querying present color schemes (including currently active one; see `MiniColors.get_colorscheme()`).
+- Create colorscheme object (see `:h MiniColors-colorscheme`): either manually (`:h MiniColors.as_colorscheme()`) or by querying present color schemes (including currently active one; see `:h MiniColors.get_colorscheme()`).
 
 - Infer data about color scheme and/or modify based on it:
     - Add transparency by removing background color (requires transparency in terminal emulator).
@@ -59,7 +60,7 @@ https://user-images.githubusercontent.com/24854248/232283566-9a51fa55-d20a-4650-
 ## Tweak quick start
 
 - Execute `:lua require('mini.colors').interactive()`.
-- Experiment by writing calls to exposed color scheme methods and applying them with `<M-a>`. For more information, see `*MiniColors-colorscheme-methods*` and `*MiniColors-recipes*` tags in help file.
+- Experiment by writing calls to exposed color scheme methods and applying them with `<M-a>`. For more information, see `:h MiniColors-colorscheme-methods` and `:h MiniColors-recipes`.
 - If you are happy with result, write color scheme with `<M-w>`. If not, reset to initial color scheme with `<M-r>`.
 - If only some highlight groups can be made better, adjust them manually inside written color scheme file.
 
@@ -76,90 +77,65 @@ Here are code snippets for some common installation methods (use only one):
 
 <details>
 <summary>With <a href="https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-deps.md">mini.deps</a></summary>
-<table>
-    <thead>
-        <tr>
-            <th>Github repo</th>
-            <th>Branch</th> <th>Code snippet</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan=2>'mini.nvim' library</td> <td>Main</td> <td rowspan=2><i>Follow recommended 'mini.deps' installation</i></td>
-        </tr>
-        <tr>
-            <td>Stable</td>
-        </tr>
-        <tr>
-            <td rowspan=2>Standalone plugin</td> <td>Main</td> <td><code>add('nvim-mini/mini.colors')</code></td>
-        </tr>
-        <tr>
-            <td>Stable</td> <td><code>add({ source = 'nvim-mini/mini.colors', checkout = 'stable' })</code></td>
-        </tr>
-    </tbody>
-</table>
+
+- 'mini.nvim' library:
+
+    | Branch | Code snippet                                  |
+    |--------|-----------------------------------------------|
+    | Main   | *Follow recommended ‘mini.deps’ installation* |
+    | Stable | *Follow recommended ‘mini.deps’ installation* |
+
+- Standalone plugin:
+
+    | Branch | Code snippet                                                     |
+    |--------|------------------------------------------------------------------|
+    | Main   | `add(‘nvim-mini/mini.colors’)`                                   |
+    | Stable | `add({ source = ‘nvim-mini/mini.colors’, checkout = ‘stable’ })` |
+
 </details>
 
 <details>
 <summary>With <a href="https://github.com/folke/lazy.nvim">folke/lazy.nvim</a></summary>
-<table>
-    <thead>
-        <tr>
-            <th>Github repo</th>
-            <th>Branch</th> <th>Code snippet</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan=2>'mini.nvim' library</td>
-            <td>Main</td> <td><code>{ 'nvim-mini/mini.nvim', version = false },</code></td>
-        </tr>
-        <tr>
-            <td>Stable</td> <td><code>{ 'nvim-mini/mini.nvim', version = '*' },</code></td>
-        </tr>
-        <tr>
-            <td rowspan=2>Standalone plugin</td>
-            <td>Main</td> <td><code>{ 'nvim-mini/mini.colors', version = false },</code></td>
-        </tr>
-        <tr>
-            <td>Stable</td> <td><code>{ 'nvim-mini/mini.colors', version = '*' },</code></td>
-        </tr>
-    </tbody>
-</table>
+
+- 'mini.nvim' library:
+
+    | Branch | Code snippet                                  |
+    |--------|-----------------------------------------------|
+    | Main   | `{ 'nvim-mini/mini.nvim', version = false },` |
+    | Stable | `{ 'nvim-mini/mini.nvim', version = '*' },`   |
+
+- Standalone plugin:
+
+    | Branch | Code snippet                                    |
+    |--------|-------------------------------------------------|
+    | Main   | `{ 'nvim-mini/mini.colors', version = false },` |
+    | Stable | `{ 'nvim-mini/mini.colors', version = '*' },`   |
+
 </details>
 
 <details>
 <summary>With <a href="https://github.com/junegunn/vim-plug">junegunn/vim-plug</a></summary>
-<table>
-    <thead>
-        <tr>
-            <th>Github repo</th>
-            <th>Branch</th> <th>Code snippet</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan=2>'mini.nvim' library</td>
-            <td>Main</td> <td><code>Plug 'nvim-mini/mini.nvim'</code></td>
-        </tr>
-        <tr>
-            <td>Stable</td> <td><code>Plug 'nvim-mini/mini.nvim', { 'branch': 'stable' }</code></td>
-        </tr>
-        <tr>
-            <td rowspan=2>Standalone plugin</td> <td>Main</td> <td><code>Plug 'nvim-mini/mini.colors'</code></td>
-        </tr>
-        <tr>
-            <td>Stable</td> <td><code>Plug 'nvim-mini/mini.colors', { 'branch': 'stable' }</code></td>
-        </tr>
-    </tbody>
-</table>
-</details>
 
-<br>
+- 'mini.nvim' library:
+
+    | Branch | Code snippet                                         |
+    |--------|------------------------------------------------------|
+    | Main   | `Plug 'nvim-mini/mini.nvim'`                         |
+    | Stable | `Plug 'nvim-mini/mini.nvim', { 'branch': 'stable' }` |
+
+- Standalone plugin:
+
+    | Branch | Code snippet                                           |
+    |--------|--------------------------------------------------------|
+    | Main   | `Plug 'nvim-mini/mini.colors'`                         |
+    | Stable | `Plug 'nvim-mini/mini.colors', { 'branch': 'stable' }` |
+
+</details>
 
 **Important**: no need to call `require('mini.colors').setup()`, but it can be done to improve usability.
 
 **Note**: if you are on Windows, there might be problems with too long file paths (like `error: unable to create file <some file name>: Filename too long`). Try doing one of the following:
+
 - Enable corresponding git global config value: `git config --system core.longpaths true`. Then try to reinstall.
 - Install plugin in other place with shorter path.
 
