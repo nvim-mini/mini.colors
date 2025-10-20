@@ -429,8 +429,8 @@ explicitly before applying transparency.
   - <general> `(boolean)` - general groups (like `Normal`). Default: `true`.
   - <float> `(boolean)` - built-in groups for floating windows. Default: `false`.
   - <statuscolumn> `(boolean)` - groups related to 'statuscolumn' (signcolumn,
-    numbercolumn, foldcolumn). Also updates groups for all currently
-    defined signs. Default: `false`.
+    numbercolumn, foldcolumn, `DiagnosticSignXxx`, and `XxxMsg` groups). Also
+    updates groups for all currently defined signs. Default: `false`.
   - <statusline> `(boolean)` - built-in groups for 'statusline'. Default: `false`.
   - <tabline> `(boolean)` - built-in groups for 'tabline'. Default: `false`.
   - <winbar> `(boolean)` - built-in groups for 'winbar'. Default: `false`.
