@@ -419,8 +419,9 @@ the same as from 0 to 7.
 *MiniColors-colorscheme:add_transparency()*
 
 Add transparency by removing background from a certain highlight groups.
-Requires actual transparency from terminal emulator to experience visible
-transparency.
+Requires actual transparency from terminal emulator to see background image.
+Has no effect on linked groups; use |MiniColors-colorscheme:resolve_links()|
+explicitly before applying transparency.
 
 ### Parameters ~
 {opts} `(table|nil)` Options. Possible fields can be used to configure which
